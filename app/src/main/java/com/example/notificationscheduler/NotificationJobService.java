@@ -24,19 +24,19 @@ public class NotificationJobService extends JobService {
                 .setContentTitle("Job Service")
                 .setContentText("Your Job is running!")
                 .setContentIntent(pendingIntent)
-                .setSmallIcon(R.drawable.ic_job_running) // (You need to add this icon.)
+                .setSmallIcon(R.drawable.ic_job_running) 
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setAutoCancel(true);
 
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         notificationManager.notify(0, builder.build());
 
-        return false; // No background work
+        return false; 
     }
 
     @Override
     public boolean onStopJob(JobParameters params) {
-        return true; // Reschedule if job interrupted
+        return true; 
     }
 
     private void createNotificationChannel() {
