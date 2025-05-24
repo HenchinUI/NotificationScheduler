@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private Switch mDeviceIdleSwitch;
     private Switch mDeviceChargingSwitch;
     private SeekBar mSeekBar;
-    private TextView seekBarProgressLabel; // <-- Added for Seekbar label
+    private TextView seekBarProgressLabel; 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,29 +29,11 @@ public class MainActivity extends AppCompatActivity {
         mDeviceChargingSwitch = findViewById(R.id.deviceChargingSwitch);
         mSeekBar = findViewById(R.id.seekBar);
 
-        mScheduler = (JobScheduler) getSystemService(JOB_SCHEDULER_SERVICE); // <-- Initialize once
+        mScheduler = (JobScheduler) getSystemService(JOB_SCHEDULER_SERVICE); 
 
         findViewById(R.id.scheduleJobButton).setOnClickListener(v -> scheduleJob());
         findViewById(R.id.cancelJobButton).setOnClickListener(v -> cancelJobs());
 
-        // OPTIONAL: Setup SeekBar label (if you add a TextView to show Seekbar progress)
-        // Example: you can add this TextView under the SeekBar in XML
-        /*
-        seekBarProgressLabel = findViewById(R.id.seekBarProgressLabel);
-        mSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                if (progress > 0) {
-                    seekBarProgressLabel.setText(progress + " seconds");
-                } else {
-                    seekBarProgressLabel.setText("Not set");
-                }
-            }
-
-            @Override public void onStartTrackingTouch(SeekBar seekBar) {}
-            @Override public void onStopTrackingTouch(SeekBar seekBar) {}
-        });
-        */
     }
 
     private void scheduleJob() {
