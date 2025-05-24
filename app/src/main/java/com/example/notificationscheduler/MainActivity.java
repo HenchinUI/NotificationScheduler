@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Initialize UI elements
         networkOptions = findViewById(R.id.networkOptions);
         mDeviceIdleSwitch = findViewById(R.id.deviceIdleSwitch);
         mDeviceChargingSwitch = findViewById(R.id.deviceChargingSwitch);
